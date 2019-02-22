@@ -1,9 +1,10 @@
 # Vagrant stuff
 #
-**/.vagrant
+**.vagrant
 **/vagrant-spec.config.rb
-**/*.log
+*.log
 test/vagrant-spec/.vagrant/
 
 # Keys
-**.ppk
+*.ppk
+*.PPK
