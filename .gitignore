@@ -1,7 +1,9 @@
 # Vagrant stuff
-acceptance_config.yml
-# boxes/*
-**.vagrant/
-# /vagrant-spec.config.rb
-*.log
+#
+**/.vagrant
+**/vagrant-spec.config.rb
+**/*.log
 test/vagrant-spec/.vagrant/
+
+# Keys
+**.ppk
