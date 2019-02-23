@@ -2,7 +2,7 @@
 #
 **.vagrant
 **/vagrant-spec.config.rb
-*.log
+**.log
 test/vagrant-spec/.vagrant/
 
 # Keys
