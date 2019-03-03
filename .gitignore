@@ -4,6 +4,7 @@
 **.vagrant
 **/vagrant-spec.config.rb
 **.log
+**.swp
 test/vagrant-spec/.vagrant/
 
 # Keys
