@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#  Added a commit
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/xenial64"
+  #
+  #
+  config.vm.provider "virtualbox" do |vb|
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = false
+ 
+    # Customize the amount of memory on the VM:
+    vb.memory = "1244"
+  end
+  #
+  config.vm.hostname = "ubuntu64"
+  # Network Stuff to prevent multiple machines having 2222 as a ssh port
+  #   first disable
+  config.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
+  #   Attempt to use this port unless it's already in use.
+  config.vm.network :forwarded_port, guest: 22, host: 2232, protocol: "tcp", auto_correct: true
+  #
+  # Less secure than creating one in production make sure to set this to true
+  config.ssh.insert_key = false
+
+  # Call up bootstrap to install software etc.
+  config.vm.provision :shell, path: "bootstrap.sh"
+
+  #
+  config.vm.post_up_message = "Make sure to set password for vagrant user before running zsh setup"
+end
