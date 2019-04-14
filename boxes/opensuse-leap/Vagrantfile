@@ -1,5 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+# New changes
 
 Vagrant.configure("2") do |config|
   config.vm.box = "toni03/opensuse-leap15"
